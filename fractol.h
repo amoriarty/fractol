@@ -15,10 +15,25 @@
 # include "mlx.h"
 
 /*
+** COLOR DEFINES
+*/
+
+# define WHITE 0xFFFFFF
+# define BLUE 0x0000FF
+# define GREEN 0x00FF00
+# define YELLOW 0xEEB422
+# define MARINE 0x33CCFF
+# define PURPLE 0x6600CC
+# define ORANGE 0x00FFA500
+# define RED 0xFF0000
+
+/*
 ** DEFINES & TYPEDEF
 */
 
 # define WIN_SIZE 480
+# define WIN_X 720
+# define WIN_Y 542
 # define WIN_TITLE "Fractol"
 
 typedef enum e_frac			t_frac;
@@ -60,6 +75,12 @@ struct						s_mlx
 };
 
 /*
+** MAIN FUNCTIONS PROTOTYPES
+*/
+
+int 						init(t_frac type);
+
+/*
 ** ALLOC FUNCTIONS PROTOTYPES
 */
 
@@ -76,5 +97,6 @@ void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 */
 
 char 						*lower_case(char *str);
+t_frac						get_frac(char *arg);
 
 #endif

@@ -7,7 +7,7 @@ SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
 #EXECUTABLE FILES
 SET(EXEC_FILE
-		sources/main.c sources/draw/put_pixel.c sources/alloc/new_img.c sources/tools/lower_case.c)
+		sources/main.c sources/draw/put_pixel.c sources/alloc/new_img.c sources/tools/lower_case.c sources/main/init.c sources/tools/get_frac.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

@@ -10,26 +10,20 @@
 
 #include "fractol.h"
 
-t_frac				get_frac(char *arg)
-{
-	if (!ft_strcmp(lower_case(arg), "mandelbrot"))
-		return (MANDELBROT);
-	else if (!ft_strcmp(lower_case(arg), "julia"))
-		return (JULIA);
-	return (ERR_FRAC);
-}
-
 int					main(int ac, char **av)
 {
+	t_frac			type;
+
 	if (ac != 2)
 	{
 		ft_dprintf(STDERR_FILENO, "%s: usage: %s [Fractal]\n", av[0], av[0]);
 		return (EXIT_FAILURE);
 	}
-	if (get_frac(av[1]) == ERR_FRAC)
+	type = get_frac(av[1]);
+	if (type == ERR_FRAC)
 	{
 		ft_dprintf(STDERR_FILENO, "%s: error: Unrecognized fractal name.\n", av[0]);
 		return (EXIT_FAILURE);
 	}
-	return (EXIT_SUCCESS);
+	return (init(type));
 }
