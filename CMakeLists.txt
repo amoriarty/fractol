@@ -7,7 +7,7 @@ SET(CMAKE_C_FLAGS "-Wall -Wextra -Werror")
 
 #EXECUTABLE FILES
 SET(EXEC_FILE
-		sources/main.c)
+		sources/main.c sources/draw/put_pixel.c sources/alloc/new_img.c sources/tools/lower_case.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
@@ -48,6 +48,10 @@ ADD_CUSTOM_TARGET(
 		DEPENDS ${PROJECT_SOURCE_DIR}/minilibx_macos/libmlx.a
 )
 
+#MACOS X FRAMEWORK
+FIND_LIBRARY(OPENGL OpenGL)
+FIND_LIBRARY(APPKIT AppKit)
+
 #EXECUTABLES
 ADD_EXECUTABLE(fractol ${EXEC_FILE})
 
@@ -61,3 +65,5 @@ ADD_DEPENDENCIES(fractol libmlx)
 TARGET_LINK_LIBRARIES(fractol ${PROJECT_SOURCE_DIR}/libft/libft.a)
 TARGET_LINK_LIBRARIES(fractol ${PROJECT_SOURCE_DIR}/ft_printf/libftprintf.a)
 TARGET_LINK_LIBRARIES(fractol ${PROJECT_SOURCE_DIR}/minilibx_macos/libmlx.a)
+TARGET_LINK_LIBRARIES(fractol ${OPENGL})
+TARGET_LINK_LIBRARIES(fractol ${APPKIT})

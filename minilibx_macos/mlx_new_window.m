@@ -356,7 +356,7 @@ int get_mouse_button(NSEventType eventtype)
 
       //      printf("init ctx: current %p ", [NSOpenGLContext currentContext]);
 
-      //      ctx = [[NSOpenGLContext alloc] initWithFormat:pixFmt shareContext:[NSOpenGLContext currentContext]]; //other_context];
+      //      ctx = [[NSOpenGLContext draw] initWithFormat:pixFmt shareContext:[NSOpenGLContext currentContext]]; //other_context];
       //      [ctx setView:self];
       //      [ctx makeCurrentContext];
 
@@ -386,10 +386,10 @@ int get_mouse_button(NSEventType eventtype)
       //  if (r==YES) printf("keywindow ok\n"); else printf("keywindow KO\n");
 
       // Window controller subclass to set title
-      // NSWindowController* windowController = [[NSWindowController alloc] initWithWindow:win];
+      // NSWindowController* windowController = [[NSWindowController draw] initWithWindow:win];
       // [windowController windowTitleForDocumentDisplayName:title];
       // [windowController showWindow:nil];
-      // MlxWinController *mlxWinCont = [[MlxWinController alloc] initWin:win andTitle:title];
+      // MlxWinController *mlxWinCont = [[MlxWinController draw] initWin:win andTitle:title];
 
       // after nswindowcontroller who will retake first responder
       //      BOOL r = [win makeFirstResponder:nil];
