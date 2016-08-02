@@ -13,6 +13,7 @@
 # include "libft.h"
 # include "ft_printf.h"
 # include "mlx.h"
+# define PROG_NAME "fractol"
 
 /*
 ** COLOR DEFINES
@@ -31,15 +32,16 @@
 ** DEFINES & TYPEDEF
 */
 
-# define WIN_SIZE 480
-# define WIN_X 720
-# define WIN_Y 542
+# define WIN_X 1080
+# define WIN_Y 640
 # define WIN_TITLE "Fractol"
 
 typedef enum e_frac			t_frac;
 typedef struct s_mlx		t_mlx;
 typedef struct s_img		t_img;
 typedef struct s_coor		t_coor;
+typedef struct s_fgr		t_fgr;
+typedef struct s_cplx		t_cplx;
 
 /*
 ** DATA STRUCTURE
@@ -72,19 +74,50 @@ struct						s_mlx
 	void					*mlx_ptr;
 	void 					*win_ptr;
 	t_img					*img;
+	t_fgr					*fractal;
+};
+
+struct						s_cplx
+{
+	int 					c_r;
+	int 					c_i;
+	int 					z_r;
+	int 					z_i;
+};
+
+struct 						s_fgr
+{
+	t_frac					type;
+	int 					iter;
+	long double				zoom;
+	t_coor					*p0;
+	t_coor					*p1;
+	t_cplx					*cplx;
 };
 
 /*
 ** MAIN FUNCTIONS PROTOTYPES
 */
 
-int 						init(t_frac type);
+int 						fractol(t_mlx *mlx, t_frac type);
 
 /*
 ** ALLOC FUNCTIONS PROTOTYPES
 */
 
 t_img						*new_img(void);
+t_cplx						*new_cplx(void);
+t_coor						*new_coor(void);
+t_fgr						*new_fgr(t_frac type);
+
+/*
+** INIT FUNCTIONS PROTOTYPES
+*/
+
+t_bool						init_mlx(t_mlx *mlx);
+t_bool						init_img(t_mlx *mlx);
+void						init_coor(t_coor *coor);
+void						init_cplx(t_cplx *cplx);
 
 /*
 ** DRAW FUNCTIONS PROTOTYPES
@@ -98,5 +131,6 @@ void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 
 char 						*lower_case(char *str);
 t_frac						get_frac(char *arg);
+void 						usage(void);
 
 #endif

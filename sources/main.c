@@ -12,18 +12,15 @@
 
 int					main(int ac, char **av)
 {
+	t_mlx			mlx;
 	t_frac			type;
 
-	if (ac != 2)
+	if (ac != 2 || ((type = get_frac(av[1])) == ERR_FRAC))
 	{
-		ft_dprintf(STDERR_FILENO, "%s: usage: %s [Fractal]\n", av[0], av[0]);
+		usage();
 		return (EXIT_FAILURE);
 	}
-	type = get_frac(av[1]);
-	if (type == ERR_FRAC)
-	{
-		ft_dprintf(STDERR_FILENO, "%s: error: Unrecognized fractal name.\n", av[0]);
+	if (init_mlx(&mlx) == FALSE)
 		return (EXIT_FAILURE);
-	}
-	return (init(type));
+	return (fractol(&mlx, type));
 }
