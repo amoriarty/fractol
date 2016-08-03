@@ -18,5 +18,6 @@ t_bool					init_mlx(t_mlx *mlx)
 									   WIN_X, WIN_Y, WIN_TITLE)))
 		return (FALSE);
 	mlx->img = NULL;
+	mlx->fractal = NULL;
 	return (TRUE);
 }

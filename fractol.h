@@ -56,8 +56,8 @@ enum 						e_frac
 
 struct						s_coor
 {
-	int 					x;
-	int 					y;
+	double 					x;
+	double					y;
 };
 
 struct 						s_img
@@ -79,10 +79,10 @@ struct						s_mlx
 
 struct						s_cplx
 {
-	int 					c_r;
-	int 					c_i;
-	int 					z_r;
-	int 					z_i;
+	double 					c_r;
+	double 					c_i;
+	double 					z_r;
+	double 					z_i;
 };
 
 struct 						s_fgr
@@ -122,10 +122,17 @@ void						init_coor(t_coor *coor);
 void						init_cplx(t_cplx *cplx);
 
 /*
+** SETTING FUNCTIONS PROTOTYPES (INIT DIR)
+*/
+
+void						set_mandelbrot(t_mlx *mlx);
+
+/*
 ** DRAW FUNCTIONS PROTOTYPES
 */
 
 void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
+void 						draw_mandelbrot(t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES
