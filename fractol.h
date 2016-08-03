@@ -92,6 +92,7 @@ struct 						s_fgr
 	double					zoom;
 	t_coor					*p0;
 	t_coor					*p1;
+	t_cplx					*cplx;
 };
 
 /*
@@ -125,6 +126,7 @@ void						init_cplx(t_cplx *cplx);
 */
 
 void						set_mandelbrot(t_mlx *mlx);
+void						set_julia(t_mlx *mlx);
 
 /*
 ** DRAW FUNCTIONS PROTOTYPES
@@ -132,6 +134,7 @@ void						set_mandelbrot(t_mlx *mlx);
 
 void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 void 						draw_mandelbrot(t_mlx *mlx);
+void 						draw_julia(t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES

@@ -21,6 +21,8 @@ static void 			frac_select(t_mlx *mlx, t_frac type)
 		mlx->fractal = new_fgr(type);
 		if (type == MANDELBROT)
 			set_mandelbrot(mlx);
+		if (type == JULIA)
+			set_julia(mlx);
 	}
 }
 

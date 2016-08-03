@@ -17,10 +17,10 @@ static int				iterate(t_mlx *mlx, t_coor *iter)
 	double				tmp;
 
 	i = 0;
-	cplx.z_r = 0;
-	cplx.z_i = 0;
-	cplx.c_r = iter->x / mlx->fractal->zoom + mlx->fractal->p0->x;
-	cplx.c_i = iter->y / mlx->fractal->zoom + mlx->fractal->p0->y;
+	cplx.c_r = mlx->fractal->cplx->c_r;
+	cplx.c_i = mlx->fractal->cplx->c_i;
+	cplx.z_r = iter->x / mlx->fractal->zoom + mlx->fractal->p0->x;
+	cplx.z_i = iter->y / mlx->fractal->zoom + mlx->fractal->p0->y;
 	while (cplx.z_r * cplx.z_r + cplx.z_i * cplx.z_i < 4
 		   && i < mlx->fractal->iter)
 	{
@@ -32,7 +32,7 @@ static int				iterate(t_mlx *mlx, t_coor *iter)
 	return (i);
 }
 
-void 					draw_mandelbrot(t_mlx *mlx)
+void 					draw_julia(t_mlx *mlx)
 {
 	t_coor				iter;
 
@@ -42,7 +42,7 @@ void 					draw_mandelbrot(t_mlx *mlx)
 		iter.y = 0;
 		while (iter.y < WIN_Y)
 		{
-			if (iterate(mlx, &iter) != mlx->fractal->iter)
+			if (iterate(mlx, &iter) == mlx->fractal->iter)
 				put_pixel(mlx, &iter, PURPLE);
 			iter.y++;
 		}
