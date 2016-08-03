@@ -109,6 +109,8 @@ t_img						*new_img(void);
 t_cplx						*new_cplx(void);
 t_coor						*new_coor(void);
 t_fgr						*new_fgr(t_frac type);
+void						free_fgr(t_fgr *fgr);
+void						free_img(t_mlx *mlx);
 
 /*
 ** INIT FUNCTIONS PROTOTYPES
