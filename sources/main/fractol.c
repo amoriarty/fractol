@@ -23,6 +23,8 @@ static void 			frac_select(t_mlx *mlx, t_frac type)
 			set_mandelbrot(mlx);
 		if (type == JULIA)
 			set_julia(mlx);
+		if (type == SWORD)
+			set_sword(mlx);
 	}
 }
 

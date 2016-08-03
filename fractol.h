@@ -13,6 +13,7 @@
 # include "libft.h"
 # include "ft_printf.h"
 # include "mlx.h"
+# include <math.h>
 # define PROG_NAME "fractol"
 
 /*
@@ -51,7 +52,8 @@ enum 						e_frac
 {
 	ERR_FRAC,
 	MANDELBROT,
-	JULIA
+	JULIA,
+	SWORD
 };
 
 struct						s_coor
@@ -127,6 +129,7 @@ void						init_cplx(t_cplx *cplx);
 
 void						set_mandelbrot(t_mlx *mlx);
 void						set_julia(t_mlx *mlx);
+void						set_sword(t_mlx *mlx);
 
 /*
 ** DRAW FUNCTIONS PROTOTYPES
@@ -135,6 +138,7 @@ void						set_julia(t_mlx *mlx);
 void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 void 						draw_mandelbrot(t_mlx *mlx);
 void 						draw_julia(t_mlx *mlx);
+void 						draw_sword(t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES

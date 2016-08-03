@@ -16,5 +16,7 @@ t_frac				get_frac(char *arg)
 		return (MANDELBROT);
 	else if (!ft_strcmp(lower_case(arg), "julia"))
 		return (JULIA);
+	else if (!ft_strcmp(lower_case(arg), "sword"))
+		return (SWORD);
 	return (ERR_FRAC);
 }
