@@ -23,7 +23,7 @@ SET(EXEC_FILE
 		sources/alloc/free_fgr.c
 		sources/draw/draw_mandelbrot.c
 		sources/draw/draw_julia.c
-		sources/init/setting.c)
+		sources/init/setting.c sources/draw/draw_buddhabrot.c sources/alloc/new_tab.c sources/alloc/free_tab.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})

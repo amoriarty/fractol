@@ -16,18 +16,17 @@ static int				iterate(t_mlx *mlx, t_coor *iter)
 	t_cplx				cplx;
 	double				tmp;
 
-	i = 0;
+	i = -1;
 	cplx.c_r = mlx->fractal->cplx->c_r;
 	cplx.c_i = mlx->fractal->cplx->c_i;
 	cplx.z_r = iter->x / mlx->fractal->zoom + mlx->fractal->p0->x;
 	cplx.z_i = iter->y / mlx->fractal->zoom + mlx->fractal->p0->y;
 	while (cplx.z_r * cplx.z_r + cplx.z_i * cplx.z_i < 4
-		   && i < mlx->fractal->iter)
+		   && ++i < mlx->fractal->iter)
 	{
 		tmp = cplx.z_r;
 		cplx.z_r = cplx.z_r * cplx.z_r - cplx.z_i * cplx.z_i + cplx.c_r;
 		cplx.z_i = 2 * cplx.z_i * tmp + cplx.c_i;
-		i++;
 	}
 	return (i);
 }

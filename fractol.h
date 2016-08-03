@@ -51,7 +51,8 @@ enum 						e_frac
 {
 	ERR_FRAC,
 	MANDELBROT,
-	JULIA
+	JULIA,
+	BUDDHABROT
 };
 
 struct						s_coor
@@ -109,8 +110,10 @@ t_img						*new_img(void);
 t_cplx						*new_cplx(void);
 t_coor						*new_coor(void);
 t_fgr						*new_fgr(t_frac type);
+int 						**new_tab(int x_size, int y_size);
 void						free_fgr(t_fgr *fgr);
 void						free_img(t_mlx *mlx);
+void						free_tab(int **tab, int size);
 
 /*
 ** INIT FUNCTIONS PROTOTYPES
@@ -127,6 +130,7 @@ void						init_cplx(t_cplx *cplx);
 
 void						set_mandelbrot(t_mlx *mlx);
 void						set_julia(t_mlx *mlx);
+void 						set_buddhabrot(t_mlx *mlx);
 
 /*
 ** DRAW FUNCTIONS PROTOTYPES
@@ -135,6 +139,7 @@ void						set_julia(t_mlx *mlx);
 void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 void 						draw_mandelbrot(t_mlx *mlx);
 void 						draw_julia(t_mlx *mlx);
+void 						draw_buddhabrot(t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES
