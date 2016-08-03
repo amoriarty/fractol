@@ -13,9 +13,9 @@
 void					set_mandelbrot(t_mlx *mlx)
 {
 	mlx->fractal->iter = 100;
-	mlx->fractal->p0->x = -2.02;
+	mlx->fractal->p0->x = -2.1;
 	mlx->fractal->p1->x = 0.6;
-	mlx->fractal->p0->y = -2.02;
+	mlx->fractal->p0->y = -1.2;
 	mlx->fractal->p1->y = 1.2;
 	mlx->fractal->zoom = 204;
 	draw_mandelbrot(mlx);

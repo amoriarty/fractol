@@ -20,8 +20,6 @@ t_fgr					*new_fgr(t_frac type)
 		return (NULL);
 	if (!(new->p1 = new_coor()))
 		return (NULL);
-	if (!(new->cplx = new_cplx()))
-		return (NULL);
 	new->type = type;
 	new->iter = 0;
 	new->zoom = 0;

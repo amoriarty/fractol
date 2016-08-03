@@ -14,6 +14,5 @@ void 					free_fgr(t_fgr *fgr)
 {
 	free(fgr->p0);
 	free(fgr->p1);
-	free(fgr->cplx);
 	free(fgr);
 }

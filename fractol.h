@@ -89,10 +89,9 @@ struct 						s_fgr
 {
 	t_frac					type;
 	int 					iter;
-	long double				zoom;
+	double					zoom;
 	t_coor					*p0;
 	t_coor					*p1;
-	t_cplx					*cplx;
 };
 
 /*
