@@ -33,8 +33,8 @@
 ** DEFINES & TYPEDEF
 */
 
-# define WIN_X 1080
-# define WIN_Y 640
+# define WIN_X 620
+# define WIN_Y 620
 # define WIN_TITLE "Fractol"
 
 typedef enum e_frac			t_frac;

@@ -41,7 +41,7 @@ void 					draw_mandelbrot(t_mlx *mlx)
 		iter.y = 0;
 		while (iter.y < WIN_Y)
 		{
-			if (iterate(mlx, &iter) != mlx->fractal->iter)
+			if (iterate(mlx, &iter) == mlx->fractal->iter)
 				put_pixel(mlx, &iter, PURPLE);
 			iter.y++;
 		}

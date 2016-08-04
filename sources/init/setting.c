@@ -12,7 +12,7 @@
 
 void					set_mandelbrot(t_mlx *mlx)
 {
-	mlx->fractal->iter = 100;
+	mlx->fractal->iter = 200;
 	mlx->fractal->p0->x = -2.1;
 	mlx->fractal->p1->x = 0.6;
 	mlx->fractal->p0->y = -1.2;
@@ -23,12 +23,12 @@ void					set_mandelbrot(t_mlx *mlx)
 
 void					set_julia(t_mlx *mlx)
 {
-	mlx->fractal->iter = 150;
+	mlx->fractal->iter = 50;
 	mlx->fractal->p0->x = -1;
-	mlx->fractal->p1->x = 1;
-	mlx->fractal->p0->y = -1.2;
-	mlx->fractal->p1->y = 1.2;
-	mlx->fractal->zoom = 204;
+	mlx->fractal->p1->x = 0.9;
+	mlx->fractal->p0->y = -1.1;
+	mlx->fractal->p1->y = 0.9;
+	mlx->fractal->zoom = 282;
 	mlx->fractal->cplx->c_r = 0.285;
 	mlx->fractal->cplx->c_i = 0.01;
 	draw_julia(mlx);
@@ -38,10 +38,10 @@ void 					set_sword(t_mlx *mlx)
 {
 	mlx->fractal->iter = 150;
 	mlx->fractal->p0->x = -1;
-	mlx->fractal->p1->x = 1;
-	mlx->fractal->p0->y = -1.2;
-	mlx->fractal->p1->y = 1.2;
-	mlx->fractal->zoom = 204;
+	mlx->fractal->p1->x = 1.5;
+	mlx->fractal->p0->y = -1.1;
+	mlx->fractal->p1->y = 0.8;
+	mlx->fractal->zoom = 272;
 	mlx->fractal->cplx->c_r = 0.285;
 	mlx->fractal->cplx->c_i = 0.01;
 	draw_sword(mlx);
