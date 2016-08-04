@@ -43,6 +43,8 @@ void 					draw_julia(t_mlx *mlx)
 		{
 			if (iterate(mlx, &iter) == mlx->fractal->iter)
 				put_pixel(mlx, &iter, PURPLE);
+			if (iterate(mlx, &iter) != mlx->fractal->iter)
+				put_pixel(mlx, &iter, 0);
 			iter.y++;
 		}
 		iter.x++;

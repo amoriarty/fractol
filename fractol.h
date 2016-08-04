@@ -30,7 +30,7 @@
 # define RED 0xFF0000
 
 /*
-** KEY DEFINES
+** KEY/MOUSE DEFINES
 */
 
 # define KEY_ESC 53
@@ -39,6 +39,8 @@
 # define KEY_DOWN 125
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
+# define MOUSE_UP 4
+# define MOUSE_DOWN 5
 
 /*
 ** DEFINES & TYPEDEF
@@ -156,6 +158,7 @@ void 						draw_sword(t_mlx *mlx);
 */
 
 int 						key_hook(int keycode, t_mlx *ml);
+int 						mouse_hook(int button, int x, int y, t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES

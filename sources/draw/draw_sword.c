@@ -43,6 +43,8 @@ void 					draw_sword(t_mlx *mlx)
 		{
 			if (iterate(mlx, &iter) == mlx->fractal->iter)
 				put_pixel(mlx, &iter, RED);
+			if (iterate(mlx, &iter) != mlx->fractal->iter)
+				put_pixel(mlx, &iter, 0);
 			iter.y++;
 		}
 		iter.x++;

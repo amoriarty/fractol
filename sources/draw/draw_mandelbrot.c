@@ -43,6 +43,8 @@ void 					draw_mandelbrot(t_mlx *mlx)
 		{
 			if (iterate(mlx, &iter) == mlx->fractal->iter)
 				put_pixel(mlx, &iter, PURPLE);
+			else
+				put_pixel(mlx, &iter, 0);
 			iter.y++;
 		}
 		iter.x++;
