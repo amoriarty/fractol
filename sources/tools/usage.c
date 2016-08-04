@@ -12,9 +12,10 @@
 
 void 					usage(void)
 {
-	ft_dprintf(STDERR_FILENO, "%s: usage: ./%s [fractal]\n%s%s%s",
+	ft_dprintf(STDERR_FILENO, "%s: usage: ./%s [fractal]\n%s%s%s%s",
 				PROG_NAME, PROG_NAME,
 				"Fractals disponible:\n",
 				"\t- Mandelbrot\n",
-				"\t- Julia\n");
+				"\t- Julia\n",
+			    "\t- Sword\n");
 }

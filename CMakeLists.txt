@@ -11,7 +11,6 @@ SET(EXEC_FILE
 		sources/draw/put_pixel.c
 		sources/alloc/new_img.c
 		sources/tools/lower_case.c
-		sources/main/fractol.c
 		sources/tools/get_frac.c
 		sources/init/init_mlx.c
 		sources/init/init_img.c
