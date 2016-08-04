@@ -159,6 +159,7 @@ void 						draw_sword(t_mlx *mlx);
 
 int 						key_hook(int keycode, t_mlx *ml);
 int 						mouse_hook(int button, int x, int y, t_mlx *mlx);
+int							julia_hook(int x, int y, t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES

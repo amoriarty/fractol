@@ -41,6 +41,8 @@ int 					fractol(t_mlx *mlx, t_frac type)
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img->img_ptr, 0, 0);
 	mlx_key_hook(mlx->win_ptr, key_hook, mlx);
 	mlx_mouse_hook(mlx->win_ptr, mouse_hook, mlx);
+	if (type == JULIA)
+		mlx_hook(mlx->win_ptr, 6, (1 << 8), julia_hook, mlx);
 	mlx_loop(mlx->mlx_ptr);
 	return (EXIT_SUCCESS);
 }

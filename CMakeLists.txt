@@ -23,7 +23,11 @@ SET(EXEC_FILE
 		sources/alloc/free_fgr.c
 		sources/draw/draw_mandelbrot.c
 		sources/draw/draw_julia.c
-		sources/init/setting.c sources/alloc/free_tab.c sources/draw/draw_sword.c sources/events/key_hook.c sources/events/mouse_hook.c)
+		sources/init/setting.c
+		sources/draw/draw_sword.c
+		sources/events/key_hook.c
+		sources/events/mouse_hook.c
+		sources/events/julia_hook.c)
 
 #INCLUDES DIRECTORIES
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR})
