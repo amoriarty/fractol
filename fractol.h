@@ -30,6 +30,17 @@
 # define RED 0xFF0000
 
 /*
+** KEY DEFINES
+*/
+
+# define KEY_ESC 53
+# define KEY_Q 12
+# define KEY_UP 126
+# define KEY_DOWN 125
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
+
+/*
 ** DEFINES & TYPEDEF
 */
 
@@ -139,6 +150,12 @@ void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
 void 						draw_mandelbrot(t_mlx *mlx);
 void 						draw_julia(t_mlx *mlx);
 void 						draw_sword(t_mlx *mlx);
+
+/*
+** EVENTS FUNCTIONS
+*/
+
+int 						key_hook(int keycode, t_mlx *ml);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES

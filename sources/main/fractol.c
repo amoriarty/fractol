@@ -35,6 +35,7 @@ int 					fractol(t_mlx *mlx, t_frac type)
 	frac_select(mlx, type);
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
 	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img->img_ptr, 0, 0);
+	mlx_key_hook(mlx->win_ptr, key_hook, mlx);
 	mlx_loop(mlx->mlx_ptr);
 	return (EXIT_SUCCESS);
 }
