@@ -1,16 +1,18 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     main.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 28/07/2016 11:45 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 11:39:15 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 11:44:14 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fractol.h"
 
-static void 			frac_select(t_mlx *mlx, t_frac type)
+static void				frac_select(t_mlx *mlx, t_frac type)
 {
 	if (!mlx->fractal || mlx->fractal->type != type)
 	{
@@ -32,13 +34,14 @@ static void 			frac_select(t_mlx *mlx, t_frac type)
 		draw_sword(mlx);
 }
 
-int 					fractol(t_mlx *mlx, t_frac type)
+int						fractol(t_mlx *mlx, t_frac type)
 {
 	if (!(mlx->img))
 		init_img(mlx);
 	frac_select(mlx, type);
 	mlx_clear_window(mlx->mlx_ptr, mlx->win_ptr);
-	mlx_put_image_to_window(mlx->mlx_ptr, mlx->win_ptr, mlx->img->img_ptr, 0, 0);
+	mlx_put_image_to_window(
+			mlx->mlx_ptr, mlx->win_ptr, mlx->img->img_ptr, 0, 0);
 	mlx_key_hook(mlx->win_ptr, key_hook, mlx);
 	mlx_mouse_hook(mlx->win_ptr, mouse_hook, mlx);
 	if (type == JULIA)
@@ -47,10 +50,10 @@ int 					fractol(t_mlx *mlx, t_frac type)
 	return (EXIT_SUCCESS);
 }
 
-int					main(int ac, char **av)
+int						main(int ac, char **av)
 {
-	t_mlx			mlx;
-	t_frac			type;
+	t_mlx				mlx;
+	t_frac				type;
 
 	if (ac != 2 || ((type = get_frac(av[1])) == ERR_FRAC))
 	{

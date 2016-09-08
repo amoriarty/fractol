@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     setting.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 03/08/2016 12:11 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   setting.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 11:38:44 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 11:45:26 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fractol.h"
 
@@ -32,7 +34,7 @@ void					set_julia(t_mlx *mlx)
 	mlx->fractal->cplx->c_i = 0.01;
 }
 
-void 					set_sword(t_mlx *mlx)
+void					set_sword(t_mlx *mlx)
 {
 	mlx->fractal->iter = 150;
 	mlx->fractal->p0->x = -1;

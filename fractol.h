@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     fractol.h
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 02/08/2016 11:54 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 11:31:37 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 11:36:03 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
@@ -61,7 +63,7 @@ typedef struct s_cplx		t_cplx;
 ** DATA STRUCTURE
 */
 
-enum 						e_frac
+enum						e_frac
 {
 	ERR_FRAC,
 	MANDELBROT,
@@ -71,39 +73,39 @@ enum 						e_frac
 
 struct						s_coor
 {
-	double 					x;
+	double					x;
 	double					y;
 };
 
-struct 						s_img
+struct						s_img
 {
 	void					*img_ptr;
-	char 					*data;
-	int 					bpp;
-	int 					sizeline;
-	int 					endian;
+	char					*data;
+	int						bpp;
+	int						sizeline;
+	int						endian;
 };
 
 struct						s_mlx
 {
 	void					*mlx_ptr;
-	void 					*win_ptr;
+	void					*win_ptr;
 	t_img					*img;
 	t_fgr					*fractal;
 };
 
 struct						s_cplx
 {
-	double 					c_r;
-	double 					c_i;
-	double 					z_r;
-	double 					z_i;
+	double					c_r;
+	double					c_i;
+	double					z_r;
+	double					z_i;
 };
 
-struct 						s_fgr
+struct						s_fgr
 {
 	t_frac					type;
-	int 					iter;
+	int						iter;
 	double					zoom;
 	t_coor					*p0;
 	t_coor					*p1;
@@ -114,7 +116,7 @@ struct 						s_fgr
 ** MAIN FUNCTIONS PROTOTYPES
 */
 
-int 						fractol(t_mlx *mlx, t_frac type);
+int							fractol(t_mlx *mlx, t_frac type);
 
 /*
 ** ALLOC FUNCTIONS PROTOTYPES
@@ -149,24 +151,24 @@ void						set_sword(t_mlx *mlx);
 */
 
 void						put_pixel(t_mlx *mlx, t_coor *pixel, int color);
-void 						draw_mandelbrot(t_mlx *mlx);
-void 						draw_julia(t_mlx *mlx);
-void 						draw_sword(t_mlx *mlx);
+void						draw_mandelbrot(t_mlx *mlx);
+void						draw_julia(t_mlx *mlx);
+void						draw_sword(t_mlx *mlx);
 
 /*
 ** EVENTS FUNCTIONS
 */
 
-int 						key_hook(int keycode, t_mlx *ml);
-int 						mouse_hook(int button, int x, int y, t_mlx *mlx);
+int							key_hook(int keycode, t_mlx *ml);
+int							mouse_hook(int button, int x, int y, t_mlx *mlx);
 int							julia_hook(int x, int y, t_mlx *mlx);
 
 /*
 ** TOOLS FUNCTIONS PROTOTYPES
 */
 
-char 						*lower_case(char *str);
+char						*lower_case(char *str);
 t_frac						get_frac(char *arg);
-void 						usage(void);
+void						usage(void);
 
 #endif

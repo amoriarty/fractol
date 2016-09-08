@@ -1,12 +1,14 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     key_hook.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 04/08/2016 11:12 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 11:38:10 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 11:45:59 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fractol.h"
 
@@ -18,12 +20,8 @@ static void				exit_proper(t_mlx *mlx)
 	exit(EXIT_SUCCESS);
 }
 
-int 					key_hook(int keycode, t_mlx *mlx)
+int						key_hook(int keycode, t_mlx *mlx)
 {
-//TODO DEBUG MODE
-#ifdef DEBUG
-	ft_printf("Keypress %d\n", keycode);
-#endif
 	if (keycode == KEY_ESC || keycode == KEY_Q)
 		exit_proper(mlx);
 	return (0);

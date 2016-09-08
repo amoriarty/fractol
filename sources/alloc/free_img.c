@@ -1,16 +1,18 @@
-//
-//           :::      ::::::::
-//         :+:      :+:    :+:     free_img.c
-//       +:+ +:+         +:+
-//     +#+  +:+       +#+          By: Alexandre LEGENT <alegent@student.42.fr>
-//   +#+#+#+#+#+   +#+
-//        #+#    #+#
-//       ###   ###########.fr      Created: 02/08/2016 17:51 by alegent
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_img.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alegent <alegent@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/08 11:36:39 by alegent           #+#    #+#             */
+/*   Updated: 2016/09/08 11:39:54 by alegent          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "fractol.h"
 
-void 				free_img(t_mlx *mlx)
+void					free_img(t_mlx *mlx)
 {
 	mlx_destroy_image(mlx->mlx_ptr, mlx->img->img_ptr);
 	free(mlx->img);
